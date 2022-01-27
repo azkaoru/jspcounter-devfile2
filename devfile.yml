@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: jsp-counter
+  name: jspcounter-devfile2
 
 attributes:
   che-theia.eclipse.org/sidecar-policy: USE_DEV_CONTAINER
