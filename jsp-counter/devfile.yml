@@ -204,6 +204,7 @@ commands:
       label: Connect Database
 
   - id: build
+    exec:
       component: tools
       workingDir: ${PROJECTS_ROOT}/jsp-counter
       commandLine: mvn clean install
