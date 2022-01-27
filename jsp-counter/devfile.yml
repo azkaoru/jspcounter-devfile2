@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: jspcounter-devfile2
+  name: spring-petclinic
 
 attributes:
   che-theia.eclipse.org/sidecar-policy: USE_DEV_CONTAINER
@@ -177,32 +177,7 @@ components:
     volume:
       size: 1G
 
-  - name: pg
-    container:
-      image: postgres
-      env:
-        - name: PGDATA
-          value: /tmp/pgdata
-        - name: POSTGRES_USER
-          value: testdb
-        - name: POSTGRES_PASSWORD
-          value: testdb
-        - name: POSTGRES_DB
-          value: testdb
-      memoryLimit: 1Gi
-      mountSources: true
-      sourceMapping: /projects
-
 commands:
-
-  - id: psql
-    exec:
-      commandLine: psql -d testdb -U testdb
-      component: pg
-      group:
-        kind: run
-      label: Connect Database
-
   - id: build
     exec:
       component: tools
